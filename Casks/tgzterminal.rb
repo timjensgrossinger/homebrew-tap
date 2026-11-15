@@ -15,14 +15,17 @@ cask "tgzterminal" do
 
   # The app has its own updater (tgz-v* releases).
   auto_updates true
+  depends_on :macos
 
   app "TGZTerminal.app"
   binary "#{appdir}/TGZTerminal.app/Contents/MacOS/tgzterminal"
 
   # Releases are not notarized, so drop the quarantine flag Homebrew sets;
   # otherwise Gatekeeper blocks the first launch.
-  postflight do
-    system_command "/usr/bin/xattr",
-                   args: ["-dr", "com.apple.quarantine", "#{appdir}/TGZTerminal.app"]
+  postflight_steps do
+    run "/usr/bin/xattr",
+        args:           ["-dr", "com.apple.quarantine", "{{appdir}}/TGZTerminal.app"],
+        writable_paths: ["TGZTerminal.app"],
+        writable_base:  :appdir
   end
 end
