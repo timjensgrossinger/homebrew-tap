@@ -13,8 +13,6 @@ cask "tgzterminal" do
     strategy :github_latest
   end
 
-  # The app has its own updater (tgz-v* releases).
-  auto_updates true
   depends_on :macos
 
   app "TGZTerminal.app"
