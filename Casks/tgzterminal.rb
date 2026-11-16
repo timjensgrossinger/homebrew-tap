@@ -1,6 +1,6 @@
 cask "tgzterminal" do
-  version "2026.11.8"
-  sha256 "5ed4ecb9cee576ce22c8e3f91854ac18a88f879ca9054c095f47d518c074d182"
+  version "2026.11.9"
+  sha256 "7e13e3def7d22af82b36ad641900f59fd58e02b697592306f195e9f1fa4e52d1"
 
   url "https://github.com/timjensgrossinger/tgzterminal/releases/download/tgz-v#{version}/TGZTerminal.dmg"
   name "TGZTerminal"
